@@ -1,0 +1,23 @@
+{
+  "name": "test-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qloan/test-utils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qloan/test-utils/issues"
+  },
+  "homepage": "https://github.com/qloan/test-utils#readme",
+  "dependencies": {
+    "chai": "^4.1.2"
+  }
+}
