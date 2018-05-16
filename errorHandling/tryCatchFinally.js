@@ -1,13 +1,16 @@
 const assert = require('chai').assert;
 
-module.exports = (tryFn, exceptionContains) => {
-    let caught;
+module.exports = (tryFn, exceptionContains = false) => {
+    let caught = false;
 
     try {
         tryFn();
     } catch (e) {
         caught = true;
-        assert(e.message.indexOf(exceptionContains) !== -1);
+
+        if (exceptionContains) {
+            assert(e.message.indexOf(exceptionContains) !== -1);
+        }
     } finally {
         assert(caught, 'Expected "tryFn" to throw');
     }

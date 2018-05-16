@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/qloan/test-utils#readme",
   "dependencies": {
-    "chai": "^4.1.2"
+    "chai": "^4.1.2",
+    "sinon": "^5.0.7"
   }
 }
