@@ -1,10 +1,10 @@
 const assert = require('chai').assert;
 
-module.exports = (tryFn, exceptionContains = false, done = () => {}) => {
+module.exports = async (tryFn, exceptionContains = false, done = () => {}) => {
     let caught = false;
 
     try {
-        tryFn();
+        await tryFn();
     } catch (e) {
         caught = true;
 
