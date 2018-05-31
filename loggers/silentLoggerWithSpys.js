@@ -3,7 +3,7 @@ const sinon = require('sinon');
 class SilentLoggerWithSpys {
     constructor(sandbox) {
         if (!sandbox) {
-            this.sandbox = sinon.sandbox.create();
+            this.sandbox = sinon.createSandbox();
         } else {
             this.sandbox = sandbox;
         }
