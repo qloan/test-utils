@@ -11,6 +11,7 @@ class SilentLoggerWithSpys {
         this.info = this.sandbox.spy();
         this.error = this.sandbox.spy();
         this.warn = this.sandbox.spy();
+        this.fields = {};
 
         this.child = function() {
             return new SilentLoggerWithSpys();
