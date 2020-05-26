@@ -17,6 +17,10 @@ class SilentLoggerWithSpys {
             return new SilentLoggerWithSpys();
         }
     }
+
+    createLogger() {
+        return this;
+    }
 }
 
 module.exports = SilentLoggerWithSpys;
