@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# Commit no lockfiles for legacy repos
+package-lock.json
+yarn.lock
