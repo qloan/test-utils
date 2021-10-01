@@ -1,5 +1,6 @@
 module.exports = {
+    api: require('./api'),
     errorHandling: require('./errorHandling'),
     loggers: require('./loggers'),
-    api: require('./api'),
+    messageAppearsInAnyCallArgs: require('./messageAppearsInAnyCallArgs'),
 };
