@@ -5,15 +5,21 @@
  * @param {string} message String to find within callArgs.
  * @returns {boolean} boolean
  */
- function messageAppearsInAnyCallArgs(callArgs = [], message) {
+function messageAppearsInAnyCallArgs(callArgs = [], message) {
     let args = callArgs;
     if (callArgs.hasOwnProperty('args')) {
         args = callArgs.args;
     }
-    return args.some((invocationArgs) => invocationArgs.some((arg) => (arg === message)
-                || (arg.message && arg.message === message)
-                || (arg.error && arg.error === message)
-                || (arg.error && arg.error.message && arg.error.message === message)));
+    return args.some((invocationArgs) => invocationArgs.some((arg) => lowerCaseCompare(arg, message)
+        || (arg.message && lowerCaseCompare(arg.message, message))
+        || (arg.error && lowerCaseCompare(arg.error, message))
+        || (arg.error && arg.error.message && lowerCaseCompare(arg.error.message, message))));
+}
+
+function lowerCaseCompare(str1, str2) {
+    return (str1 && str2)
+        && (str1.toLowerCase && str2.toLowerCase)
+        && (str1.toLowerCase() === str2.toLowerCase());
 }
 
 module.exports = messageAppearsInAnyCallArgs;
