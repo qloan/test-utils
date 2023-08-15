@@ -10,10 +10,11 @@ function messageAppearsInAnyCallArgs(callArgs = [], message) {
     if (callArgs.hasOwnProperty('args')) {
         args = callArgs.args;
     }
-    return args.some((invocationArgs) => invocationArgs.some((arg) => lowerCaseCompare(arg, message)
+    return args.some((invocationArgs) => Array.isArray(invocationArgs) && invocationArgs.some((arg) => !!arg &&
+        (lowerCaseCompare(arg, message)
         || (arg.message && lowerCaseCompare(arg.message, message))
         || (arg.error && lowerCaseCompare(arg.error, message))
-        || (arg.error && arg.error.message && lowerCaseCompare(arg.error.message, message))));
+        || (arg.error && arg.error.message && lowerCaseCompare(arg.error.message, message)))));
 }
 
 function lowerCaseCompare(str1, str2) {
